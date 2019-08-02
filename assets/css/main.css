@@ -1,5 +1,5 @@
 /* Variables */
-@import url("https://fonts.googleapis.com/css?family=Cantata+One|Metamorphous|Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cantata+One|Metamorphous&display=swap");
 
 /* Base */
 * {
@@ -7,11 +7,11 @@
 }
 
 html {
-	font-size: 14px;
+	font-size: 12px;
 }
 @media screen and (min-width: 640px) {
 	html {
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
 @media screen and (min-width: 1280px) {
@@ -73,20 +73,9 @@ hr {
 a {
 	color: #D33;
 	border-radius: 3px;
-	box-shadow: 5px 0 0 0 transparent, -5px 0 0 0 transparent;
-	transition: background-color 0.25s ease, box-shadow 0.25s ease;
-}
-a:hover {
-	background-color: #D33;
-	box-shadow: 5px 0 0 0 #D33, -5px 0 0 0 #D33;
-	color: #FFF;
 }
 blockquote a {
 	color: #333;
-}
-blockquote a:hover {
-	background-color: #333;
-	box-shadow: 5px 0 0 0 #333, -5px 0 0 0 #333;
 }
 
 em {
@@ -185,7 +174,6 @@ th:hover, td:hover {
 	position: fixed;
 	left: 0;
 	right: 0;
-	/* bottom calculated with JS */
 }
 
 .DS_Header__Placeholder {
@@ -546,10 +534,10 @@ th:hover, td:hover {
 }
 
 /* Page */
-.DS_Shop {
+.DS_Home {
 	margin: 5rem 0;
 }
-.DS_Shop__Button {
+.DS_Home__Button {
 	text-align: center;
 }
 
@@ -572,7 +560,7 @@ th:hover, td:hover {
     }
     .DS_Lyrics__Image {
         flex: 1 1 auto;
-        padding: 0;
+        padding-top: 3.2rem;
     }
     .DS_Lyrics__Image .DS_Article {
         position: -webkit-sticky;
@@ -582,4 +570,108 @@ th:hover, td:hover {
         flex: 2 2 100%;
         padding-left: 3.2rem;
     }
+}
+
+.DS_Shop {
+
+}
+
+.DS_Shop__Image {
+    padding-top: 1.6rem;
+}
+
+.DS_Shop__Text {
+
+}
+
+.DS_Shop__Header {
+	display: none;
+}
+
+.DS_Shop__Category {
+	color: #999;
+	font-size: 1rem;
+}
+
+.DS_Shop__Rate {
+	color: #D33;
+	font-size: 1rem;
+}
+
+.DS_Shop__BasketWrapper {
+	margin: 3.2rem 0;
+}
+
+.DS_Shop__Price {
+	font-size: 2.4rem;
+	color: #D33;
+	font-family: "Metamorphous", cursive;
+}
+
+.DS_Shop__BasketInput {
+	display: inline-block;
+	padding: 0.4rem 0.8rem 0.4rem 1.6rem;
+	cursor: pointer;
+	color: #999;
+	margin: 0.8rem 0.8rem 0.8rem 0;
+	border: 2px solid #999;
+	background-color: transparent;
+	font-size: inherit;
+	font-weight: normal;
+	font-family: inherit;
+	line-height: inherit;
+	border-radius: 3px;
+	text-align: right;
+	max-width: 100px;
+}
+
+.DS_Shop__Description {
+	margin: 5rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .DS_Shop {
+        display: flex;
+    }
+    .DS_Shop__Image {
+        flex: 1 1 auto;
+        padding-top: 3.2rem;
+	}
+	.DS_Shop__Image .DS_Article header {
+		display: none;
+	}
+    .DS_Shop__Text {
+        flex: 2 2 100%;
+        padding-left: 3.2rem;
+	}
+	.DS_Shop__Header {
+		display: block;
+	}
+}
+
+.DS_Comment__Date {
+	font-size: 1rem;
+	color: #999;
+}
+
+.DS_Comment__Rate {
+	color: #D33;
+}
+
+@media screen and (min-width: 640px) {
+	.DS_Comment {
+		display: flex;
+	}
+	
+	.DS_Comment__Image {
+		flex: 1 1 auto;
+	}
+	.DS_Comment__Image img{
+		margin: 1.6rem 0;
+	}
+	
+	.DS_Comment__Text {
+		flex: 2 2 100%;
+		padding-left: 3.2rem;
+	}
 }
