@@ -1,0 +1,585 @@
+/* Variables */
+@import url("https://fonts.googleapis.com/css?family=Cantata+One|Metamorphous|Open+Sans&display=swap");
+
+/* Base */
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 14px;
+}
+@media screen and (min-width: 640px) {
+	html {
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 1280px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+body {
+	color: #666;
+	background-color: #FFF;
+	font-size: 1.4rem;
+	font-family: "Cantata One", serif;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Metamorphous", cursive;
+	color: #333;
+	line-height: initial;
+}
+
+h1 {
+	font-size: 4rem;
+	margin: 5rem 0;
+}
+
+h2 {
+	font-size: 3rem;
+	margin: 3.2rem 0;
+}
+
+h3 {
+	font-size: 2.34rem;
+	margin: 3.2rem 0;
+}
+
+h4 {
+	font-size: 2rem;
+	margin: 1.6rem 0;
+}
+
+h5 {
+	font-size: 1.66rem;
+	margin: 1.6rem 0;
+}
+
+h6 {
+	font-size: 1.54rem;
+	margin: 0.8rem 0;
+}
+
+hr {
+	margin: 3.2rem 0;
+	border: none;
+	border-top: 1px solid #999;
+}
+
+a {
+	color: #D33;
+	border-radius: 3px;
+	box-shadow: 5px 0 0 0 transparent, -5px 0 0 0 transparent;
+	transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+a:hover {
+	background-color: #D33;
+	box-shadow: 5px 0 0 0 #D33, -5px 0 0 0 #D33;
+	color: #FFF;
+}
+blockquote a {
+	color: #333;
+}
+blockquote a:hover {
+	background-color: #333;
+	box-shadow: 5px 0 0 0 #333, -5px 0 0 0 #333;
+}
+
+em {
+	color: #333;
+}
+
+strong {
+	color: #333;
+}
+
+del {
+	color: #999;
+}
+
+p {
+	margin: 3.2rem 0;
+}
+
+blockquote {
+	margin: 3.2rem 0;
+	padding: 1.6rem;
+	background-color: #D33;
+	color: #FFF;
+	border-radius: 3px;
+}
+
+code {
+	background-color: #D33;
+	padding: 0 0.8rem;
+	color: #FFF;
+	border-radius: 3px;
+}
+blockquote code {
+	background-color: #FFF;
+	color: #333;
+}
+pre code {
+	padding: 0;
+	background-color: transparent;
+}
+
+pre {
+	margin: 3.2rem 0;
+	padding: 1.6rem;
+	background-color: #D33;
+	overflow: auto;
+	border-radius: 3px;
+}
+
+ul, ol {
+	margin: 3.2rem 0;
+	padding-left: 1.6rem;
+}
+
+img {
+	max-width: 100%;
+	margin: 3.2rem auto;
+	display: block;
+	border-radius: 3px;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 3.2rem auto;
+	border: 1px solid #999;
+	max-width: 100%;
+}
+
+th, td {
+	padding: 0.8rem 1.6rem;
+	line-height: initial;
+}
+th:hover, td:hover {
+	background-color: #d9d9d9;
+}
+
+/* Layout */
+.DS_Main {
+	line-height: 2.4rem;
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 1.6rem;
+}
+@media screen and (min-width: 640px) {
+	.DS_Main {
+		padding: 3.2rem;
+	}
+}
+
+.DS_Header__Wrapper {
+	position: relative;
+	z-index: 1000;
+	background: transparent url("http://www.krocblanc.fr/wp-content/uploads/2016/09/1410.jpg") no-repeat center bottom/cover;
+}
+.--header-fixed .DS_Header__Wrapper {
+	position: fixed;
+	left: 0;
+	right: 0;
+	/* bottom calculated with JS */
+}
+
+.DS_Header__Placeholder {
+	display: none;
+}
+.--header-fixed .DS_Header__Placeholder {
+	display: block;
+}
+
+.DS_Header__Wrapper,
+.DS_Header__Placeholder {
+	height: calc(100vh * 2 / 3);
+}
+.DS_Header__Wrapper.--small,
+.DS_Header__Placeholder.--small {
+	height: auto;
+}
+.DS_Header__Wrapper.--small .DS_Header,
+.DS_Header__Placeholder.--small .DS_Header {
+	position: relative;
+}
+
+.DS_Header {
+	position: absolute;
+	bottom: 0;
+	z-index: 1100;
+	left: 0;
+	right: 0;
+	font-size: 1rem;
+}
+.DS_Header a {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	text-decoration: none;
+}
+.DS_Header__Column {
+	max-width: 1600px;
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	padding: 0.8rem 1.6rem;
+}
+@media screen and (min-width: 640px) {
+	.DS_Header__Column {
+		padding: 0.8rem 3.2rem;
+	}
+}
+.DS_Header__Column > * {
+	flex: 0 0 auto;
+}
+.DS_Header__Logo img {
+	margin: 0;
+}
+.DS_Header .DS_Nav.--tablet {
+	flex: 1 1 100%;
+	display: none;
+}
+@media screen and (min-width: 640px) {
+	.DS_Header .DS_Nav.--tablet {
+		display: block;
+	}
+}
+.DS_Header__Icons {
+	flex: 1 1 100%;
+	text-align: right;
+}
+@media screen and (min-width: 640px) {
+	.DS_Header__Icons {
+		flex: 0 0 auto;
+	}
+}
+.DS_Header__IconsLink {
+	display: inline-block;
+	font-size: 1.4rem;
+	color: #FFF;
+	padding: 0 0.4rem;
+	transition: opacity 0.25s ease;
+	opacity: 0.75;
+	cursor: pointer;
+}
+.DS_Header__IconsLink.--active, .DS_Header__IconsLink:hover {
+	opacity: 1;
+}
+@media screen and (min-width: 640px) {
+	.DS_Header__IconsLink.--mobile {
+		display: none;
+	}
+}
+
+.DS_Menu {
+	text-align: right;
+	z-index: 900;
+	background-color: #333;
+	font-size: 1rem;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-top: -60px;
+}
+.--header-fixed .DS_Menu {
+	display: block;
+	position: fixed;
+	top: 0;
+	margin-top: 0;
+}
+.DS_Menu a {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	text-decoration: none;
+}
+.DS_Menu .DS_Nav {
+	transition: margin-top 0.25s ease;
+}
+.DS_Menu__Input {
+	display: none;
+}
+.DS_Menu__Input:checked + .DS_Nav {
+	margin-top: 60px;
+}
+@media screen and (min-width: 640px) {
+	.DS_Menu {
+		display: none;
+	}
+}
+
+.DS_Footer {
+	background: transparent url("https://www.krocblanc.fr/wp-content/uploads/2016/05/dark-forest.jpg") no-repeat center 80%/cover;
+	color: #FFF;
+	font-size: 1rem;
+	text-align: center;
+}
+@media screen and (min-width: 640px) {
+	.DS_Footer {
+		text-align: left;
+	}
+}
+.DS_Footer__Column {
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 1.6rem 1.6rem 0.8rem;
+}
+@media screen and (min-width: 640px) {
+	.DS_Footer__Column {
+		padding: 1.6rem 3.2rem;
+		display: flex;
+		align-items: center;
+	}
+}
+.DS_Footer__Column > * {
+	flex: 1 1 auto;
+}
+.DS_Footer a {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	text-decoration: none;
+	color: #FFF;
+	opacity: 0.75;
+}
+.DS_Footer a:hover {
+	opacity: 1;
+}
+@media screen and (min-width: 640px) {
+	.DS_Footer .DS_Nav {
+		text-align: right;
+	}
+}
+
+/* Component */
+.DS_Image {
+	width: 100%;
+}
+
+.DS_Nav__ListItem {
+	margin: 0;
+	padding: 0 0.8rem;
+}
+
+.DS_Nav__Item {
+	list-style: none;
+}
+.DS_Nav.--horizontal .DS_Nav__Item {
+	display: inline;
+}
+.DS_Nav__ItemLink {
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.8rem;
+	color: #FFF;
+	transition: opacity 0.25s ease;
+	opacity: 0.75;
+}
+.DS_Nav__ItemLink.--active, .DS_Nav__ItemLink:hover {
+	opacity: 1;
+}
+
+.DS_Button {
+	display: inline-block;
+	padding: 0.4rem 1.6rem;
+	cursor: pointer;
+	color: #D33;
+	text-decoration: none;
+	margin: 0.8rem 0.8rem 0.8rem 0;
+	border: 2px solid transparent;
+	background-color: transparent;
+	font-size: inherit;
+	font-weight: normal;
+	font-family: inherit;
+	line-height: inherit;
+	border-radius: 3px;
+	box-shadow: none !important;
+	transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+.DS_Button:hover {
+	color: #FFF;
+	background-color: #D33;
+	border-color: #D33;
+}
+.DS_Button.--primary {
+	border-color: #D33;
+	background-color: #D33;
+	color: #FFF;
+}
+.DS_Button.--secondary {
+	border-color: #D33;
+}
+
+.DS_ListArticle {
+	text-align: center;
+	margin: 0 -0.8rem;
+}
+@media screen and (min-width: 640px) {
+	.DS_ListArticle {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -1.6rem;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.DS_ListArticle {
+		margin: 0 -3.2rem;
+	}
+}
+.DS_ListArticle__Cell {
+	flex: 1 1 auto;
+	max-width: 100%;
+	padding: 3.2rem 0.8rem;
+}
+@media screen and (min-width: 640px) {
+	.DS_ListArticle__Cell {
+		padding: 3.2rem 1.6rem;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.DS_ListArticle__Cell {
+		padding: 3.2rem 3.2rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.DS_ListArticle__Cell.--double {
+		flex-basis: calc(100% / 2);
+		max-width: calc(100% / 2);
+	}
+}
+@media screen and (min-width: 640px) {
+	.DS_ListArticle__Cell.--triple {
+		flex-basis: calc(100% / 2);
+		max-width: calc(100% / 2);
+	}
+}
+@media screen and (min-width: 1280px) {
+	.DS_ListArticle__Cell.--triple {
+		flex-basis: calc(100% / 3);
+		max-width: calc(100% / 3);
+	}
+}
+.DS_ListArticle .DS_ArticleLink {
+	text-decoration: none;
+}
+
+.DS_Article {
+	text-align: center;
+	vertical-align: top;
+	max-width: 100%;
+	cursor: pointer;
+}
+.DS_Article__HeadWrapper {
+	position: relative;
+	display: inline-block;
+}
+.DS_Article__ImageContener {
+	overflow: hidden;
+	border-radius: 3px;
+}
+.DS_Article__Image {
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
+	transition: transform 0.25s ease;
+}
+.DS_Article:hover .DS_Article__Image {
+	transform: scale(1.1);
+}
+@media screen and (min-width: 1280px) {
+	.DS_Article__Image {
+		width: 100%;
+	}
+}
+.DS_Article__Badge {
+	position: absolute;
+	left: 0;
+	display: inline-block;
+	padding: 0.4rem 0;
+	font-family: "Metamorphous", cursive;
+	color: #D33;
+	border-radius: 3px;
+	line-height: initial;
+	bottom: 100%;
+}
+@media screen and (min-width: 640px) {
+	.DS_Article__Badge {
+		bottom: 0;
+		transform-origin: 0 100%;
+		transform: rotate(-90deg);
+	}
+}
+.DS_Article__Title {
+	margin: 1.6rem 0 0;
+}
+.DS_Article__Text {
+	margin: 1.6rem 0;
+}
+.DS_Article__Category {
+	color: #999;
+	font-size: 1rem;
+}
+.DS_Article__Price {
+	font-size: 1.8rem;
+	color: #D33;
+	font-family: "Metamorphous", cursive;
+}
+.DS_Article__Price.--last {
+	font-size: 1rem;
+	color: #999;
+	text-decoration: line-through;
+}
+@media screen and (min-width: 640px) {
+	.DS_Article.--large {
+		display: flex;
+
+	}
+	.DS_Article.--large .DS_Article__HeadWrapper {
+		flex: 1 1 calc(100 / 3);
+
+	}
+	.DS_Article.--large .DS_Article__BodyWrapper {
+		flex: 2 2 calc(100 * 2 / 3);
+	}
+}
+
+/* Page */
+.DS_Shop {
+	margin: 5rem 0;
+}
+.DS_Shop__Button {
+	text-align: center;
+}
+
+.DS_Lyrics__Image {
+    padding-top: 1.6rem;
+}
+
+.DS_Lyrics__TitleText + .DS_Lyrics__TitleText {
+    padding-top: 1.6rem;
+}
+@media screen and (min-width: 640px) {
+    .DS_Lyrics__TitleText + .DS_Lyrics__TitleText {
+        padding-top: 3.2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .DS_Lyrics {
+        display: flex;
+    }
+    .DS_Lyrics__Image {
+        flex: 1 1 auto;
+        padding: 0;
+    }
+    .DS_Lyrics__Image .DS_Article {
+        position: -webkit-sticky;
+        position: sticky;
+    }
+    .DS_Lyrics__Text {
+        flex: 2 2 100%;
+        padding-left: 3.2rem;
+    }
+}
