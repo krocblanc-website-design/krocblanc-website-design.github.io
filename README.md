@@ -3,8 +3,8 @@
 ## TODO List
 * [x] Accueil
 * [x] Shop
-  * [ ] Shop List
-  * [ ] Shop Post
+  * [x] Shop List
+  * [x] Shop Post
   * [ ] Basket
 * [X] Lyrics
   * [x] Lyrics List
