@@ -600,6 +600,7 @@ th:hover, td:hover {
 
 .DS_Shop__BasketWrapper {
 	margin: 3.2rem 0;
+	text-align: right;
 }
 
 .DS_Shop__Price {
@@ -646,6 +647,9 @@ th:hover, td:hover {
 	}
 	.DS_Shop__Header {
 		display: block;
+	}
+	.DS_Shop__BasketWrapper {
+		text-align: inherit;
 	}
 }
 
